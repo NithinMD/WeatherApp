@@ -34,20 +34,21 @@ npm install
 yarn install
 
 ## incase if dependecies fail, run this 
-npm install @react-navigation/native @react-navigation/native-stack react-native-screens react-native-safe-area-context
-npm install axios
-npm install @react-native-async-storage/async-storage
-npm install react-native-vector-icons
-npm install --save-dev @testing-library/react-native @testing-library/jest-native
+
+npm install @react-navigation/native @react-navigation/native-stack react-native-screens react-native-safe-area-context  
+npm install axios  
+npm install @react-native-async-storage/async-storage  
+npm install react-native-vector-icons  
+npm install --save-dev @testing-library/react-native @testing-library/jest-native  
 
 ## Running the App
 
-Android
+Android  
 npx react-native run-android
 
-iOS  
-cd ios && pod install && cd ..
-npx react-native run-ios
+iOS    
+cd ios && pod install && cd ..  
+npx react-native run-ios  
 
 Project Structure
 /src
@@ -61,7 +62,7 @@ Project Structure
 /__tests__           # Test files
 
 ## Testing
-To run tests:
+To run tests:  
 npm test
 # or
 yarn test
