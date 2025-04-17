@@ -37,7 +37,7 @@ export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({ child
         getLastCity(),
         getLastWeatherData()
       ]);
-      console.log("Saved city: ",savedCity)
+      
       if (savedCity) {
         setLastSearchedCity(savedCity);
       }

@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { WeatherData } from '../types/weatherTypes';
+import { createStyles as createStyles } from '../styles/weatherCardStyles';
+import { useTheme } from '../contexts/ThemeContext';
 
 interface WeatherCardProps {
   weatherData: WeatherData;
@@ -9,7 +11,9 @@ interface WeatherCardProps {
 
 const WeatherCard: React.FC<WeatherCardProps> = ({ weatherData }) => {
   const { name, main, weather, sys } = weatherData;
-  
+  const { theme } = useTheme(); // 👈 use theme from context
+  const styles = createStyles(theme); // 👈 create styles based on theme
+
   const getWeatherIcon = () => {
     const iconMap: Record<string, string> = {
       'clear': 'weather-sunny',
@@ -47,53 +51,5 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ weatherData }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  card: {
-    backgroundColor: '#fff',
-    borderRadius: 15,
-    padding: 20,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 6,
-    elevation: 3,
-    width: '100%',
-  },
-  city: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    textAlign: 'center',
-  },
-  mainInfo: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginVertical: 15,
-  },
-  icon: {
-    marginRight: 15,
-  },
-  temp: {
-    fontSize: 36,
-    fontWeight: 'bold',
-  },
-  condition: {
-    fontSize: 20,
-    textAlign: 'center',
-    marginBottom: 20,
-    textTransform: 'capitalize',
-  },
-  details: {
-    marginTop: 10,
-    fontWeight: 'bold',
-  },
-  detailItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginVertical: 5,
-  },
-});
 
 export default WeatherCard;
