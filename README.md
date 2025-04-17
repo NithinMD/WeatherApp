@@ -20,8 +20,6 @@ A React Native weather application with real-time weather data, search functiona
   - Xcode (for iOS)
 
 
-
-
 ## Project Structure
 /src
   /components        # Reusable UI components
@@ -33,11 +31,6 @@ A React Native weather application with real-time weather data, search functiona
   /utils             # Utility functions and constants
 /__tests__           # Test files
 
-## Testing
-To run tests:  
-npm test
-# or
-yarn test
 
 
 ## 🏗️ Project Architecture
@@ -136,4 +129,10 @@ npx react-native run-android
 iOS    
 cd ios && pod install && cd ..  
 npx react-native run-ios  
+
+## Testing
+To run tests:  
+npm test
+# or
+yarn test
 
